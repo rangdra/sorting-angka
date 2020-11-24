@@ -45,7 +45,9 @@ searchLog.addEventListener("click", function () {
     angka
   )} dibulatkan jadi ${Math.round(hitungBanyakKelas(angka))}`;
 });
-function hitungBanyakKelas(log) {
+
+function hitungBanyakKelas(val) {
+  const log = Math.log(val) / Math.LN10;
   let k = 1 + 3.3 * log;
   return k;
 }
