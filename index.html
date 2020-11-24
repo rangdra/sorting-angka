@@ -31,9 +31,7 @@
         display: inline-block;
         font-size: 16px;
         border-radius: 8px;
-      }
-      .search-button:focus {
-        outline-color: #81d683;
+        margin-right: 10px;
       }
     </style>
   </head>
@@ -41,7 +39,20 @@
     <div class="container">
       <input type="text" class="input-keyword" placeholder="Input Number..." />
       <button class="search-button" type="button">Search</button>
-      <ul class="sort"></ul>
+      <ul class="sort">
+        <li>Urutan Data: <span class="hasil-sorting"></span></li>
+        <li>Hasil Tambah: <span class="hasil-tambah"></span></li>
+        <li>Banyak Data: <span class="banyak-data"></span></li>
+        <li>Nilai Terbesar: <span class="nilai-besar"></span></li>
+        <li>Nilai Terkecil: <span class="nilai-kecil"></span></li>
+        <li>Range: <span class="range"></span></li>
+      </ul>
+      <p>Masukkan Nilai Log:</p>
+      <input type="text" class="input-log" placeholder="Input Number..." />
+      <button class="search-log" type="button">Search</button>
+      <ul>
+        <li>Banyak Kelas: <span class="banyak-kelas"></span></li>
+      </ul>
     </div>
 
     <script src="script.js"></script>
