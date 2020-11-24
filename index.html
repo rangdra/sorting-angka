@@ -32,17 +32,16 @@
         font-size: 16px;
         border-radius: 8px;
       }
+      .search-button:focus {
+        outline-color: #81d683;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <input
-        type="number"
-        class="input-keyword"
-        placeholder="Input Number..."
-      />
+      <input type="text" class="input-keyword" placeholder="Input Number..." />
       <button class="search-button" type="button">Search</button>
-      <p class="sort"></p>
+      <ul class="sort"></ul>
     </div>
 
     <script src="script.js"></script>
