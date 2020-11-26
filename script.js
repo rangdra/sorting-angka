@@ -18,7 +18,7 @@ search.addEventListener("click", function () {
   const frekuensi = getFrekuensi(arrAngka);
   for (let prop in frekuensi) {
     // console.log("Angka: " + prop + " = " + frekuensi[prop]);
-    hasilFerkuensi += `Angka: ${prop} = ${frekuensi[prop]} <br>`;
+    hasilFerkuensi += `Angka ${prop} = ${frekuensi[prop]} <br>`;
   }
   const sorting = arrAngka.sort((a, b) => a - b);
 
