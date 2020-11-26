@@ -15,12 +15,6 @@
         width: 600px;
         margin: 50px auto;
       }
-      .input-keyword {
-        width: 200px;
-        height: 25px;
-        border-radius: 8px;
-        padding: 10px;
-      }
       .search-button {
         background-color: #4caf50; /* Green */
         border: none;
@@ -33,11 +27,14 @@
         border-radius: 8px;
         margin-right: 10px;
       }
+      .input-keyword {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <input type="text" class="input-keyword" placeholder="Input Number..." />
+      <textarea class="input-keyword" rows="10"></textarea>
       <button class="search-button" type="button">Search</button>
       <ul class="sort">
         <li>Urutan Data: <span class="hasil-sorting"></span></li>
@@ -46,7 +43,9 @@
         <li>Nilai Terbesar: <span class="nilai-besar"></span></li>
         <li>Nilai Terkecil: <span class="nilai-kecil"></span></li>
         <li>Range: <span class="range"></span></li>
+        <li>Fre: <span class="fre"></span></li>
       </ul>
+
       <p>Masukkan Nilai Log(Banyak Data)</p>
       <input type="text" class="input-log" placeholder="Input Number..." />
       <button class="search-log" type="button">Search</button>

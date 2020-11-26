@@ -9,10 +9,17 @@ search.addEventListener("click", function () {
   const nilaiBesar = document.querySelector(".nilai-besar");
   const nilaiKecil = document.querySelector(".nilai-kecil");
   const range = document.querySelector(".range");
+  const fre = document.querySelector(".fre");
 
   const angka = inputKeyword.value;
-  const arrAngka = angka.split(" ");
+  const arrAngka = angka.split(",");
 
+  let hasilFerkuensi = "";
+  const frekuensi = getFrekuensi(arrAngka);
+  for (let prop in frekuensi) {
+    // console.log("Angka: " + prop + " = " + frekuensi[prop]);
+    hasilFerkuensi += `Angka: ${prop} = ${frekuensi[prop]} <br>`;
+  }
   const sorting = arrAngka.sort((a, b) => a - b);
 
   const number = arrAngka.map((x) => parseInt(x));
@@ -24,16 +31,8 @@ search.addEventListener("click", function () {
   nilaiKecil.innerHTML = sorting[0];
   nilaiBesar.innerHTML = sorting.slice(-1)[0];
   range.innerHTML = sorting.slice(-1)[0] - sorting[0];
+  fre.innerHTML = hasilFerkuensi;
 });
-
-// const grouped = sorting.reduce((r, v, i, a) => {
-//     if (v === a[i - 1]) {
-//       r[r.length - 1].push(v);
-//     } else {
-//       r.push(v === a[i + 1] ? [v] : v);
-//     }
-//     return r;
-//   }, []);
 
 const searchLog = document.querySelector(".search-log");
 searchLog.addEventListener("click", function () {
@@ -50,4 +49,27 @@ function hitungBanyakKelas(val) {
   const log = Math.log(val) / Math.LN10;
   let k = 1 + 3.3 * log;
   return k;
+}
+
+function getFrekuensi(arr) {
+  let obj = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    let element = arr[i];
+
+    console.log(element);
+
+    // check if key exists in object already
+
+    // if it exists, add 1 to the value
+    if (obj[element] !== undefined) {
+      obj[element] += 1;
+    }
+
+    // if it does not exist, add 1 to setup future elements
+    else {
+      obj[element] = 1;
+    }
+  }
+  return obj;
 }
